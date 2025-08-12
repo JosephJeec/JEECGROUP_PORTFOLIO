@@ -1,0 +1,210 @@
+:root {
+  --primary-blue: #0A2E59; /* Deeper blue */
+  --secondary-blue: #1C4D8C; /* Slightly lighter */
+  --accent-gold: #FFC107; /* Brighter gold */
+  --light-blue: #E0F2F7; /* Softer light blue */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  color: #333; /* Default text color */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                  url('https://cdn.pixabay.com/photo/2017/08/07/16/39/university-2604315_1280.jpg'); /* Keep this or find a more vibrant Poland-specific image */
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  display: flex; /* Ensure content is centered vertically */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  position: relative; /* For overlay effects */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 48, 87, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button {
+  background-color: var(--accent-gold);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(255, 193, 7, 0.4); /* Gold shadow */
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease-out;
+}
+
+.cta-button:hover::after {
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px; /* More space for the underline */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 50%; /* Make it shorter */
+  height: 5px; /* Make it thicker */
+  background-color: var(--accent-gold);
+  bottom: 0px; /* Adjust position */
+  left: 50%;
+  transform: translateX(-50%); /* Center the underline */
+  border-radius: 3px;
+}
+
+.highlight-card {
+  transition: all 0.3s ease;
+  border-radius: 12px; /* Softer edges */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.highlight-card:hover {
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icon-large {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+}
+
+.service-card {
+  border-left: 5px solid var(--accent-gold); /* Thicker border */
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(10, 46, 89, 0.3); /* Blue focus ring */
+}
+
+.submit-button {
+  background-color: var(--accent-gold);
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e6b000; /* Slightly darker gold on hover */
+}
+
+.social-icons a {
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px) scale(1.1); /* Lift and slightly enlarge */
+  color: var(--accent-gold);
+}
+
+.university-logo {
+    height: 80px; /* Standardize logo size */
+    object-fit: contain;
+    filter: grayscale(100%); /* Make logos grayscale to fit design */
+    transition: all 0.3s ease;
+}
+
+.university-logo:hover {
+    filter: grayscale(0%); /* Color on hover */
+    transform: scale(1.05);
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-content {
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 70vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Your existing styles */
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #0A2E59;
+  box-shadow: 0 0 0 3px rgba(10, 46, 89, 0.3);
+}
+
+.submit-button {
+  background-color: #FFC107;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e6b000;
+}
+
+#form-message {
+  transition: all 0.3s ease;
+}

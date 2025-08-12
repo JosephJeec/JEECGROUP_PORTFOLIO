@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joseph European Education Consultancy (JEEC) - Study in Poland</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/197/197529.png" type="image/png">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <style id="app-style">
+    :root {
+      --primary-blue: #1e3a8a;
+      --secondary-blue: #1e40af;
+      --accent-gold: #f59e0b;
+      --light-blue: #dbeafe;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .hero-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                       url('https://cdn.pixabay.com/photo/2017/08/07/16/39/university-2604315_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 90vh;
+    }
+    
+    .cta-button {
+      background-color: var(--accent-gold);
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 70%;
+      height: 4px;
+      background-color: var(--accent-gold);
+      bottom: -10px;
+      left: 0;
+    }
+    
+    .highlight-card {
+      transition: all 0.3s ease;
+    }
+    
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .icon-large {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+    
+    .service-card {
+      border-left: 4px solid var(--accent-gold);
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+    }
+    
+    .submit-button {
+      background-color: var(--accent-gold);
+      transition: all 0.3s ease;
+    }
+    
+    .submit-button:hover {
+      background-color: #e89c0c;
+    }
+    
+    .social-icons a {
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--accent-gold);
+    }
+
+    @media (max-width: 640px) {
+      .hero-section {
+        min-height: 70vh;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="javascript:void(0)" class="flex items-center">
+        <span class="text-blue-900 font-bold text-xl md:text-2xl">JEEC</span>
+        <span class="text-yellow-500 font-bold ml-1">Poland</span>
+      </a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#why-poland" class="text-gray-700 hover:text-blue-900 font-medium">Why Poland</a>
+        <a href="#services" class="text-gray-700 hover:text-blue-900 font-medium">Services</a>
+        <a href="#highlights" class="text-gray-700 hover:text-blue-900 font-medium">Highlights</a>
+        <a href="#contact" class="text-gray-700 hover:text-blue-900 font-medium">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="#why-poland" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Why Poland</a>
+      <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Services</a>
+      <a href="#highlights" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Highlights</a>
+      <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section flex items-center justify-center">
+    <div class="container mx-auto px-6 text-center hero-content">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" data-aos="fade-up">Study and Settle in Europe with Poland's Top Education Consultancy</h1>
+      <p class="text-xl md:text-2xl text-white mb-8" data-aos="fade-up" data-aos-delay="100">Low-Cost Education, Vibrant Student Life & Schengen Opportunities</p>
+      <a href="#contact" class="cta-button px-8 py-4 text-lg font-semibold rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="200">Get Free Counseling Now</a>
+    </div>
+  </section>
+
+  <!-- Why Choose Poland Section -->
+  <section id="why-poland" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-12 text-center section-title" data-aos="fade-up">Why Choose Poland?</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+        <!-- Low Costs -->
+        <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up">
+          <div class="text-blue-800 mb-4">
+            <i class="fas fa-wallet text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Low Costs of Studying & Living</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              European-quality education at Indian prices
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              Internationally recognized Polish degrees
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Vibrant Student Life -->
+        <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-blue-800 mb-4">
+            <i class="fas fa-users text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Vibrant Student Life</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              Rich culture, entertainment, and high safety standards
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              Modern facilities and student-friendly cities
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Financial Benefits -->
+        <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-blue-800 mb-4">
+            <i class="fas fa-money-bill-wave text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Financial Benefits</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              Work unlimited hours while studying (tax-free if under 26)
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              3-month summer break for full-time jobs
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Global Opportunities -->
+        <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-blue-800 mb-4">
+            <i class="fas fa-globe-europe text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-blue-900 mb-4">Global Opportunities</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              Travel to 28 Schengen countries visa-free
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              Scholarships for non-EU students
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poland Images Section -->
+  <section class="py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in">
+          <img src="https://images.unsplash.com/photo-1607427293702-036933bbf746?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjkwMjR8MHwxfHNlYXJjaHwxfHxXYXJzYXclMjBPbGQlMjBUb3dufGVufDB8fHx8MTc1MzYzNzk3N3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Warsaw Old Town" class="w-full h-64 object-cover">
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-semibold text-blue-900">Warsaw Old Town</h3>
+            <p class="text-gray-600">Poland's historic and vibrant capital</p>
+          </div>
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1716112245298-92e3e6c667c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjkwMjR8MHwxfHNlYXJjaHwxMnx8V3JvY2xhdyUyMFVuaXZlcnNpdHl8ZW58MHx8fHwxNzUzNjM3OTQ3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Wroclaw University" class="w-full h-64 object-cover">
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-semibold text-blue-900">University of Wrocław</h3>
+            <p class="text-gray-600">One of Poland's prestigious institutions</p>
+          </div>
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1717915604611-214eb95ba797?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjkwMjR8MHwxfHNlYXJjaHw0fHxLcmFrb3clMjB1bml2ZXJzaXR5JTIwb2YlMjBlY29ub21pY3N8ZW58MHx8fHwxNzUzNjM4MDE0fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Krakow Main Square" class="w-full h-64 object-cover">
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-semibold text-blue-900">Krakow Main Square</h3>
+            <p class="text-gray-600">Student life in Poland's cultural center</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 bg-blue-900 text-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center section-title" data-aos="fade-up">Services Offered by JEEC</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <!-- Admission & Visa Support -->
+        <div class="service-card bg-blue-800 bg-opacity-30 p-6 rounded-lg shadow-xl" data-aos="fade-up">
+          <div class="flex items-start">
+            <div class="mr-4 text-yellow-400">
+              <i class="fas fa-passport text-4xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Admission & Visa Support</h3>
+              <p class="text-blue-100 mb-3">We guide you through every step of your educational journey in Poland.</p>
+              <ul class="text-blue-100 space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  University selection based on your preferences
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Complete visa guidance and documentation
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Scholarship application assistance
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Settlement Services -->
+        <div class="service-card bg-blue-800 bg-opacity-30 p-6 rounded-lg shadow-xl" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-start">
+            <div class="mr-4 text-yellow-400">
+              <i class="fas fa-home text-4xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Settlement Services</h3>
+              <p class="text-blue-100 mb-3">We ensure your transition to Poland is smooth and stress-free.</p>
+              <ul class="text-blue-100 space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Airport pickup upon arrival
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Bank account setup assistance
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Finding suitable accommodation
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Employment Help -->
+        <div class="service-card bg-blue-800 bg-opacity-30 p-6 rounded-lg shadow-xl" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-start">
+            <div class="mr-4 text-yellow-400">
+              <i class="fas fa-briefcase text-4xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Employment Help</h3>
+              <p class="text-blue-100 mb-3">We support your financial independence while studying.</p>
+              <ul class="text-blue-100 space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Part-time job guidance
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Work permits (Karta Pobytu) assistance
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  CV preparation and interview training
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Academic Flexibility -->
+        <div class="service-card bg-blue-800 bg-opacity-30 p-6 rounded-lg shadow-xl" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-start">
+            <div class="mr-4 text-yellow-400">
+              <i class="fas fa-graduation-cap text-4xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Academic Flexibility</h3>
+              <p class="text-blue-100 mb-3">We help you navigate the Polish education system effectively.</p>
+              <ul class="text-blue-100 space-y-2">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Course change guidance
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Dual-degree PhD programs
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Erasmus program opportunities
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Highlights Section -->
+  <section id="highlights" class="py-16 bg-gray-100">
+    
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-12 text-center section-title" data-aos="fade-up">Key Highlights</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div class="highlight-card bg-white p-8 rounded-lg shadow-lg text-center" data-aos="flip-left">
+          <div class="text-5xl mb-6 text-blue-900">🎓</div>
+          <h3 class="text-2xl font-semibold text-blue-900 mb-4">Earn While You Learn</h3>
+          <p class="text-gray-600">Work unlimited hours with your student visa, building valuable experience while earning money.</p>
+        </div>
+        
+        <div class="highlight-card bg-white p-8 rounded-lg shadow-lg text-center" data-aos="flip-left" data-aos-delay="100">
+          <div class="text-5xl mb-6 text-blue-900">🌍</div>
+          <h3 class="text-2xl font-semibold text-blue-900 mb-4">Explore Schengen Europe</h3>
+          <p class="text-gray-600">Travel freely across 28 Schengen countries during your studies in Poland.</p>
+        </div>
+        
+        <div class="highlight-card bg-white p-8 rounded-lg shadow-lg text-center" data-aos="flip-left" data-aos-delay="200">
+          <div class="text-5xl mb-6 text-blue-900">💰</div>
+          <h3 class="text-2xl font-semibold text-blue-900 mb-4">No Tax for Students Under 26</h3>
+          <p class="text-gray-600">Keep 100% of your earnings with Poland's tax exemption for young students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="py-16 bg-blue-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-12 text-center section-title" data-aos="fade-up">Student Success Stories</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 font-bold mr-4">
+              AR
+            </div>
+            <div>
+              <h4 class="font-semibold text-blue-900">Ankit R.</h4>
+              <p class="text-sm text-gray-500">Computer Science, Warsaw University of Technology</p>
+            </div>
+          </div>
+          <p class="text-gray-700">"JEEC made my dream of studying in Europe a reality. Their guidance with visa process and finding part-time work was invaluable. I'm now working at a tech company while completing my degree!"</p>
+          <div class="mt-4 text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 font-bold mr-4">
+              SP
+            </div>
+            <div>
+              <h4 class="font-semibold text-blue-900">Sneha P.</h4>
+              <p class="text-sm text-gray-500">Business Management, Kozminski University</p>
+            </div>
+          </div>
+          <p class="text-gray-700">"Joseph from JEEC personally helped me find accommodation and settle in Warsaw. The best part is how affordable my education is compared to other European countries while maintaining the same quality."</p>
+          <div class="mt-4 text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 font-bold mr-4">
+              RK
+            </div>
+            <div>
+              <h4 class="font-semibold text-blue-900">Rahul K.</h4>
+              <p class="text-sm text-gray-500">Medicine, Medical University of Lodz</p>
+            </div>
+          </div>
+          <p class="text-gray-700">"I've traveled to 6 European countries during my holidays thanks to Poland's Schengen membership. JEEC's services exceeded my expectations - from university selection to helping with my residency permit."</p>
+          <div class="mt-4 text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-12 text-center section-title" data-aos="fade-up">Get In Touch</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+          <div data-aos="fade-right">
+            <h3 class="text-2xl font-semibold text-blue-900 mb-6">Contact Information</h3>
+            <p class="text-gray-700 mb-8">Ready to start your European education journey? Fill out the form or contact us directly, and we'll provide personalized guidance for your study abroad goals.</p>
+            
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="text-blue-900 mr-4">
+                  <i class="fas fa-phone-alt text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-blue-900">Phone</h4>
+                  <p class="text-gray-700">+48 739 662 792 (Joseph L Sebastian)</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="text-blue-900 mr-4">
+                  <i class="fas fa-map-marker-alt text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-blue-900">Location</h4>
+                  <p class="text-gray-700">Warszawa, Poland</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="text-blue-900 mr-4">
+                  <i class="fas fa-clock text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-blue-900">Hours</h4>
+                  <p class="text-gray-700">Monday - Friday: 9:00 AM - 7:00 PM CET</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="font-semibold text-blue-900 mb-4">Connect With Us</h4>
+              <div class="social-icons flex space-x-4">
+                <a href="javascript:void(0)" class="text-blue-900 hover:text-yellow-500 transition-colors" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="javascript:void(0)" class="text-blue-900 hover:text-yellow-500 transition-colors" aria-label="WhatsApp">
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+                <a href="javascript:void(0)" class="text-blue-900 hover:text-yellow-500 transition-colors" aria-label="Instagram">
+                  <i class="fab fa-instagram text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div data-aos="fade-left">
+            <form id="contact-form" class="contact-form space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name <span class="text-red-500">*</span></label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              
+              <div>
+                <label for="destination" class="block text-sm font-medium text-gray-700 mb-1">Preferred Study Destination</label>
+                <select id="destination" name="destination" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option value="Poland">Poland</option>
+                  <option value="Germany">Germany</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Netherlands">Netherlands</option>
+                  <option value="Denmark">Denmark</option>
+                  <option value="Malta">Malta</option>
+                  <option value="Lithuania">Lithuania</option>
+                  <option value="Latvia">Latvia</option>
+                  <option value="France">France</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="I need help with admission..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+              </div>
+              
+              <div>
+                <button type="submit" class="submit-button w-full py-3 px-4 font-semibold text-white rounded-md shadow-md hover:shadow-lg transition-all">Get Free Assistance</button>
+              </div>
+              
+              <p class="text-sm text-gray-500 mt-2">We'll never share your details.</p>
+            </form>
+            
+            <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-md">
+              <p class="font-medium">Thank you for your inquiry!</p>
+              <p>We've received your message and will contact you shortly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-10">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Joseph European Education Consultancy</h3>
+          <p class="text-blue-100">Your trusted partner for studying in Poland and settling in Europe.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#why-poland" class="text-blue-100 hover:text-yellow-400 transition-colors">Why Poland</a></li>
+            <li><a href="#services" class="text-blue-100 hover:text-yellow-400 transition-colors">Our Services</a></li>
+            <li><a href="#highlights" class="text-blue-100 hover:text-yellow-400 transition-colors">Key Highlights</a></li>
+            <li><a href="#contact" class="text-blue-100 hover:text-yellow-400 transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fas fa-phone-alt mr-2 text-yellow-400"></i>
+              <span>+48 739 662 792</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-user mr-2 text-yellow-400"></i>
+              <span>Joseph L Sebastian</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-2 text-yellow-400"></i>
+              <span>Warszawa, Poland</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+          <div class="social-icons flex space-x-4 mb-4">
+            <a href="javascript:void(0)" class="text-white hover:text-yellow-400 transition-colors" aria-label="LinkedIn">
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-white hover:text-yellow-400 transition-colors" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-white hover:text-yellow-400 transition-colors" aria-label="Instagram">
+              <i class="fab fa-instagram text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-200">
+        <p>&copy; 2025 Joseph European Education Consultancy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS Animation Library -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  
+  <script id="app-script">
+    // Initialize AOS animations
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
+    
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          const mobileMenu = document.getElementById('mobile-menu');
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
+    
+    // Form submission handling
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Basic form validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const destination = document.getElementById('destination').value;
+      const message = document.getElementById('message').value;
+      
+      if (!name || !email) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // Prepare form data for API
+      const formData = {
+        name,
+        email,
+        phone,
+        destination,
+        message,
+        date: new Date().toISOString()
+      };
+      
+      // Store in localStorage for demo purposes
+      const submissions = JSON.parse(localStorage.getItem('jeecFormSubmissions') || '[]');
+      submissions.push(formData);
+      localStorage.setItem('jeecFormSubmissions', JSON.stringify(submissions));
+      
+      // In a real implementation, this would be sent to a server
+      // Mock API calls for prototype
+      await appendToGoogleSheet(formData);
+      
+      // Show success message
+      document.getElementById('contact-form').reset();
+      document.getElementById('form-success').classList.remove('hidden');
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        document.getElementById('form-success').classList.add('hidden');
+      }, 5000);
+    });
+    
+    /**
+     * Appends form data to a Google Sheet using Magic Loops API
+     * @param {Object} data - Form submission data to be stored in Google Sheets
+     * @returns {Promise} - Resolution of the API call
+     */
+    async function appendToGoogleSheet(data) {
+      try {
+        console.log('Google Sheets Integration - Appending data:', data);
+        
+        // Call the AdmissionInquiry Magic Loop to send data to Google Sheets
+        const response = await fetch('https://magicloops.dev/api/loop/3c044ca0-74c6-4501-ae98-477e1235185b/run', {
+          method: 'POST',
+          body: JSON.stringify({
+            "name": data.name,
+            "email": data.email,
+            "phone": data.phone,
+            "destination": data.destination,
+            "message": data.message
+          }),
+        });
+
+        const responseData = await response.json();
+        console.log('Google Sheet update response:', responseData);
+        
+        // Log the event using the EngagementLogger loop
+        await fetch('https://magicloops.dev/api/loop/6940d7c2-4a21-4768-848c-f7ef8a4112a7/run', {
+          method: 'POST',
+          body: JSON.stringify({
+            "eventType": "google_sheet_update",
+            "metadata": {
+              "formId": "contactForm",
+              "userAgent": navigator.userAgent,
+              "page": window.location.href
+            }
+          }),
+        });
+        
+        return responseData;
+      } catch (error) {
+        console.error('Failed to append to Google Sheet:', error);
+        // Continue with form submission even if sheet update fails
+        return null;
+      }
+    }
+  </script>
+</body>
+</html>
